@@ -1,0 +1,40 @@
+<!doctype html>
+    <html lang="en">
+    <head>
+        {% include 'ecomm/cdnlines.html' %}
+        <title>Reset Page</title>
+    </head>
+    <body>
+    {% include 'ecomm/navbar.html' %}
+    <div class="jumbotron text-center">
+        <h1 class="display-3">Reset Your Password</h1>
+        <p class="lead">Create a New Account Registered </p>
+        <hr class="my-2">
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="{% url 'registrationView' %}" role="button">Registration Page</a>
+        </p>
+    </div>
+    <div class="container">
+    	<div class="row">
+            <div class="offset-md-4 col-md-4">
+                <form method="POST">
+                    {% csrf_token %}
+                    <label for="uname">Enter Your User Name</label>
+                    <input type="text" name="uname" placeholder="UserName" class="form-control">
+                    <label for="pwd">Enter Your Password</label>
+                    <input type="password" name="pwd" placeholder="Password" class="form-control">
+                    <label for="cpwd">Confirm Your Password</label>
+                    <input type="password" name="cpwd" placeholder="Confirm Password" class="form-control">
+                    <div class="row">
+                        <br>
+                    </div>
+                    <center>
+                    <input type="submit" value="UpdatePassword" class="btn btn-primary">
+                    <input type="reset" value="resetEmail" class="btn btn-danger">
+                        </center>
+                </form>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
